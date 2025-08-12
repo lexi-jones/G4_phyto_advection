@@ -33,15 +33,19 @@ MESOSCALE EDDIES & MAP FIGS
 ~~~ SCRIPTS (environment `G4.ymal`) ~~~
 
 PHYTOPLANKTON PIPELINE
-1. `lat_diel_running_means_v3.ipynb`: Calculates the spatiotemporal anomaly (STA) from abundance for each phytoplankton ASV 
+1. `pp_group_annotation_v3.ipynb` : Annotate the phytoplankton taxa by group
+2. `lat_diel_running_means_v3.ipynb`: Calculates the spatiotemporal anomaly (STA) from abundance for each phytoplankton ASV 
 	- Fig S1 : latitudinal trends
 	- Fig S4 : spatial and temporal distances between samples
 	- Fig S2 : STA methods 
 	- Fig 2 : Stacked eukaryote groups
 	- Fig S3 : Stacked cyanobacteria groups 
-2. `dispersal_vs_eco_metrics_v9.ipynb` : Compares coherence timescale with STA 
+3. `dispersal_vs_eco_metrics_v9.ipynb` : Compares coherence timescale with STA 
 	- Fig 5 : Euk STA vs coherence time (total sum)
 	- Fig S7 : Cyan STA vs coherence time
 	- Fig S8 : Euk STA vs coherence time (group level)
-3. `pcc_dist_by_physical_state_v2.ipynb` : Spearman Distance
+4. `pcc_dist_by_physical_state_v2.ipynb` : Spearman Distance
+
+TEMPERATURE
+1. `temp_lat_advection.ipynb` : Compare Gaussian cloud trajectory directions with temperature anomalies
 
