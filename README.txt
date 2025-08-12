@@ -33,6 +33,10 @@ MESOSCALE EDDIES & MAP FIGS
 ~~~ SCRIPTS (environment `G4.ymal`) ~~~
 
 PHYTOPLANKTON PIPELINE
+Pre-prossessing of sequence data and internal standard correction described in Jones-Kellett et al. 2024 (https://doi.org/10.1093/ismeco/ycae115)
+Internal standard correction scripts: https://github.com/lexi-jones/internal_std_correction
+
+
 1. `pp_group_annotation_v3.ipynb` : Annotate the phytoplankton taxa by group
 2. `lat_diel_running_means_v3.ipynb`: Calculates the spatiotemporal anomaly (STA) from abundance for each phytoplankton ASV 
 	- Fig S1 : latitudinal trends
@@ -48,4 +52,8 @@ PHYTOPLANKTON PIPELINE
 
 TEMPERATURE
 1. `temp_lat_advection.ipynb` : Compare Gaussian cloud trajectory directions with temperature anomalies
+
+TKE
+1.  : Calculate TKE 
+2. `TKE_plot.ipynb` : Plot TKE
 
