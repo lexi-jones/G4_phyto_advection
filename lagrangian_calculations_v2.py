@@ -1,11 +1,11 @@
 # lagrangian_calculations.py
 # 
-# Calculate displacement, FTLE, and LAVD from backward-in-time Lagrangian trajectories.
+# Calculate displacement, FTLE, and LAVD from backward-in-time Lagrangian trajectories initialized in a grid.
 
 # LJK
 #
 # Date created: 11/09/22
-# Last edited: 08/08/25
+# Last edited: 08/12/25
 
 from glob import glob
 from datetime import datetime
