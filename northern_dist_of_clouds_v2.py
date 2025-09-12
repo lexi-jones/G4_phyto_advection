@@ -10,9 +10,9 @@ import pandas as pd
 import numpy as np
 import xarray as xr
 import scipy.stats as spy
+import * from config
 
-metadata_dir = '/nfs/micklab005/jonesae/gradients4/'
-metadata_df = pd.read_csv(metadata_dir + 'AVISO_metadata_w_sst_sss.csv')
+metadata_df = pd.read_csv(data_dir + 'AVISO_metadata_w_sst_sss.csv')
 metadata_df = metadata_df.set_index('sample_id')
 
 def angleFromCoordinate(lat1, lon1, lat2, lon2):
@@ -52,11 +52,11 @@ def get_traj_angles(sample_id,num_days,dataset):
     dataset: 'cmems' or 'oscar'
     """
     if dataset == 'cmems':
-        save_dir = '/nfs/micklab005/jonesae/gradients4/parcels_trajs/gaussian_seeding_sample_sites/CMEMS_runs/'
+        save_dir = data_dir + '/parcels_trajs/gaussian_seeding_sample_sites/CMEMS_runs/'
         file_path = '%ssamplesite%s_200day_backward_runtime_20min_timestep_6hr_output_freq_1000_gaussian_particles_0.025_std_dist_cmems.nc'%(save_dir,sample_id)
         
     elif dataset == 'oscar':
-        save_dir = '/nfs/micklab005/jonesae/gradients4/parcels_trajs/gaussian_seeding_sample_sites/OSCAR_final_runs/'
+        save_dir = data_dir + '/parcels_trajs/gaussian_seeding_sample_sites/OSCAR_final_runs/'
         file_path = '%ssamplesite%s_200day_backward_runtime_20min_timestep_6hr_output_freq_1000_gaussian_particles_0.025_std_dist_oscar_final_run3.nc'%(save_dir,sample_id)
         
     ds = xr.open_dataset(file_path)
@@ -92,9 +92,9 @@ def thirty_day_dists(dataset):
             dayx_dists_north.append(get_traj_angles(s,x,dataset))
         
         if dataset == 'cmems':
-            save_dir = '/nfs/micklab005/jonesae/gradients4/parcels_trajs/gaussian_seeding_sample_sites/CMEMS_runs/'
+            save_dir = data_dir + '/parcels_trajs/gaussian_seeding_sample_sites/CMEMS_runs/'
         elif dataset == 'oscar':
-            save_dir = '/nfs/micklab005/jonesae/gradients4/parcels_trajs/gaussian_seeding_sample_sites/OSCAR_final_runs/'
+            save_dir = data_dir + '/parcels_trajs/gaussian_seeding_sample_sites/OSCAR_final_runs/'
              
         np.save(save_dir+'%s_day%s_dists_north_v2'%(dataset,x),dayx_dists_north)
         
