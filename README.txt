@@ -18,6 +18,7 @@ GAUSSIAN CLOUDS
 	- Fig S10 : CMEMS vs OSCAR trajectories
 4. `animate_trajs.py` : Convert saved images into an animation/video
 	- Video S1 : Gaussian cloud slideshow
+5. `northern_dist_of_clouds_v2.py` : Compute the origin distance of the clouds, data outputted for `temp_lat_advection.ipynb`
 
 GRIDDED LAGRANGIAN SIMS
 1. `run_parcels_CMEMS_v3.py` : OceanParcels gridded simulations
