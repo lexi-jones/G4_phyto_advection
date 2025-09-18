@@ -66,6 +66,6 @@ TEMPERATURE
 	- Fig S8 : Underway SST and its relation to the water mass advection histories
 	- Fig S9 : steps to derive the spatiotemporal anomaly of SST
 TKE
-1.  : Calculate TKE 
+1. `Turbulent_kinetic_energy_generation.jl` : Calculate TKE; note that this Julia script was run outside the `G4.ymal` environment by MJF
 2. `TKE_plot.ipynb` : Plot TKE
 	- Fig S13 : TKE and MLD 2020-2022
