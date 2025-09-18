@@ -6,7 +6,7 @@ OceanParcels Lagrangian simulations (v2.2.2; https://doi.org/10.5194/gmd-12-3571
 Genetic data was processed on a local computer (environment `G4.ymal`).
 
 
-~~~ SCRIPTS (environment `py3_parcels_v2.ymal`) ~~~
+~~~ /physics_pipeline/ SCRIPTS (environment `py3_parcels_v2.ymal`) ~~~
 
 `functions_for_parcels.py` : functions I use to accompany OceanParcels Lagrangian simulations
 
@@ -39,9 +39,8 @@ MESOSCALE EDDIES & MAP FIGS
 	- Fig S7a : Tile plot of FTLE
 
 
-~~~ SCRIPTS (environment `G4.ymal`) ~~~
+~~~ /phytoplankton_pipeline/ SCRIPTS (environment `G4.ymal`) ~~~
 
-PHYTOPLANKTON PIPELINE
 Pre-prossessing of sequence data and internal standard correction described in Jones-Kellett et al. 2024 (https://doi.org/10.1093/ismeco/ycae115)
 Internal standard correction scripts: https://github.com/lexi-jones/internal_std_correction
 
@@ -60,6 +59,10 @@ Internal standard correction scripts: https://github.com/lexi-jones/internal_std
 4. `pcc_dist_by_physical_state_v2.ipynb` : Spearman Distance
 	- Fig S5 : Spearman distance of ASV STAs between neighboring samples
 	- Fig S7b,c : Spearman distance of ASV STAs between neighboring samples across FTLE maxima
+
+~~~ /SST_and_TKE/ SCRIPTS (environment `G4.ymal`) ~~~
+
+Supplemental calculations
 
 TEMPERATURE
 1. `temp_lat_advection.ipynb` : Compare Gaussian cloud trajectory directions with temperature anomalies
