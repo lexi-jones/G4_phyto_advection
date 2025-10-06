@@ -62,7 +62,7 @@ timestep_mins = 20 # minutes
 output_freq = 6 #hours
 
 #for input_dataset in ['cmems','oscar_interim','globcurrent0']:
-for input_dataset in ['cmems','oscar_final']:
+for input_dataset in ['cmems','oscar_final','globcurrent15']:
 
     if input_dataset == 'cmems':
         parcels_input_files = sorted(glob(data_dir + 'CMEMS_data/dt_global_allsat_phy_l4_*.nc'))
@@ -94,7 +94,7 @@ for input_dataset in ['cmems','oscar_final']:
         variables = {'U': 'ugos','V': 'vgos'}
         dimensions = {'U': {'lon':'longitude','lat':'latitude','time':'time'},
                       'V': {'lon':'longitude','lat':'latitude','time':'time'}}
-        output_dir = data_dir + 'parcels_trajs/gaussian_seeding_sample_sites/CMEMS_runs/'
+        output_dir = data_dir + 'parcels_trajs/gaussian_seeding_sample_sites/GC_runs/'
 
     print("Advecting particles for sample site...")
 
@@ -114,8 +114,8 @@ for input_dataset in ['cmems','oscar_final']:
         lat_list = (float(m[3])+points[:,1]).tolist()
 
         # CMEMS & OSCAR are 0-360 lon, GLORYS is -180 to 180
-        if input_dataset == 'glorys':
-            lon_list = [i+360 for i in lon_list] #only works for negative lons
+        #if input_dataset == 'glorys':
+        #    lon_list = [i+360 for i in lon_list] #only works for negative lons
 
         if (input_dataset == 'oscar_interim') or (input_dataset == 'oscar_final'):
             pset = ParticleSet.from_list(fieldset = fieldset, pclass=JITParticle, 
@@ -126,7 +126,7 @@ for input_dataset in ['cmems','oscar_final']:
                                          lon = lon_list, lat = lat_list, 
                                          depth = [0]*len(lon_list), time = [datetime_time]*len(lon_list))
 
-        output_file_path = '%ssamplesite%s_%sday_backward_runtime_%smin_timestep_%shr_output_freq_%s_gaussian_particles_%s_std_dist_%s_run3.nc'%(output_dir,m[0],runtime,timestep_mins,output_freq,num,std,input_dataset)
+        output_file_path = '%ssamplesite%s_%sday_backward_runtime_%smin_timestep_%shr_output_freq_%s_gaussian_particles_%s_std_dist_%s_run4.nc'%(output_dir,m[0],runtime,timestep_mins,output_freq,num,std,input_dataset)
 
         ## Create output file
         if os.path.exists(output_file_path):
