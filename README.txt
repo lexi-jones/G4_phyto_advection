@@ -34,9 +34,8 @@ MESOSCALE EDDIES & MAP FIGS
 	- Fig 1 : Regimes of phytoplankton biomass and community structure in the North Pacific
 	- Fig 3 : SLA tile plot with sample locations and eddy bounds
 	- Fig S14c : map of outside-eddy water mass coherence times across the NPSG
-3. `G4_eddy_structure_comparison_v2.ipynb` : Plot SLA, FTLE, LAVD of the individual eddies
+3. `G4_eddy_structure_comparison_v2.ipynb` : Plot SLA and LAVD of the individual eddies
 	- Fig S6 : internal structures of each mesoscale eddy
-	- Fig S7a : Tile plot of FTLE
 
 
 ~~~ /phytoplankton_pipeline/ SCRIPTS (environment `G4.ymal`) ~~~
