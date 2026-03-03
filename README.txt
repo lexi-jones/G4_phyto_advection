@@ -14,8 +14,8 @@ GAUSSIAN CLOUDS
 1. `gaussian_lag_sims_v4.py` : OceanParcels simulations of the Gaussian clouds
 2. `calc_coh_time_of_gaussian_clouds.py` : Measure dispersal/coherence time of the clouds
 3. `water_mass_traj_plots.ipynb` : Plot the Gaussian cloud trajectories
-	- Fig 4 : Lagrangian coherency of the sampled water masses with examples
-	- Fig S10 : CMEMS vs OSCAR trajectories
+	- Fig 3 : Lagrangian coherency of the sampled water masses with examples
+	- Fig S7 : CMEMS vs OSCAR trajectories
 4. `animate_trajs.py` : Convert saved images into an animation/video
 	- Video S1 : Gaussian cloud slideshow
 5. `northern_dist_of_clouds_v2.py` : Compute the origin distance of the clouds, data outputted for `temp_lat_advection.ipynb`
@@ -26,16 +26,16 @@ GRIDDED LAGRANGIAN SIMS
 3. `run_parcels_CMEMS_NPSG_outside_eddies.py` : High-res gridded simulation to compute outside-eddy dispersal rates
 4. `coh_time_of_gridded_particles_v3.py` : Calculating a pseudo-coherence time of particle clusters across the gyre (outside of eddies)
 5. `coh_grid_test.ipynb` : Compare coherence time from grid sim computed in `coh_time_of_gridded_particles_v3.py` to original Gaussian clouds
-	- Fig S14a,b
+	- Fig S11a,b
 
 MESOSCALE EDDIES & MAP FIGS 
 1. `G4_AVISO_eddies_v3.ipnyb` : Identify intersected eddies along cruise track in AVISO dataset
 2. `G4_paper_map_figs_v2.ipnyb` : Map visualizations
 	- Fig 1 : Regimes of phytoplankton biomass and community structure in the North Pacific
-	- Fig 3 : SLA tile plot with sample locations and eddy bounds
-	- Fig S14c : map of outside-eddy water mass coherence times across the NPSG
+	- Fig 2a : SLA tile plot with sample locations and eddy bounds
+	- Fig S11c,d : map of outside-eddy water mass coherence times across the NPSG
 3. `G4_eddy_structure_comparison_v2.ipynb` : Plot SLA and LAVD of the individual eddies
-	- Fig S6 : internal structures of each mesoscale eddy
+	- Fig S10 : LAVD coherent structures of each sampled eddy
 
 
 ~~~ /phytoplankton_pipeline/ SCRIPTS (environment `G4.ymal`) ~~~
