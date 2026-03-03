@@ -65,9 +65,9 @@ Supplemental calculations
 
 TEMPERATURE
 1. `temp_lat_advection.ipynb` : Compare Gaussian cloud trajectory directions with temperature anomalies
-	- Fig S8 : Underway SST and its relation to the water mass advection histories
-	- Fig S9 : steps to derive the spatiotemporal anomaly of SST
+	- Fig S5 : Underway SST anomalies versus water mass advection histories (Geostrophy only, Geostrophy + Ekman)
+	- Fig S6 : steps to derive the spatiotemporal anomaly of SST
 TKE
 1. `Turbulent_kinetic_energy_generation.jl` : Calculate TKE; note that this Julia script was run outside the `G4.ymal` environment by MJF
 2. `TKE_plot.ipynb` : Plot TKE
-	- Fig S13 : TKE and MLD 2020-2022
+	- Fig S12 : TKE and MLD 2020-2022
