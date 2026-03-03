@@ -5,75 +5,27 @@
 #
 # LJK
 # Date created : 12/22/25
-# Last edited : 12/22/25
+# Last edited : 03/03/26
 
+import json
 from glob import glob
 import numpy as np
 import pandas as pd
 from collections import OrderedDict
 from config import * # directory file paths
 
-# Names of the technical replicates (all have 3 except for sample '20')
-station_name_dict = OrderedDict(
-                    {'16': ['16A','16B','16C'],
-                    '17': ['17A','17B','17C'],
-                    '18': ['18A','18B','18C'],
-                    '19': ['19A','19B','19C'],
-                    '20': ['20B','20C'],
-                    '21': ['21A','21B','21C'],
-                    '22': ['22A','22B','22C'],
-                    '23': ['23A','23B','23C'],
-                    '24': ['24A','24B','24C'],
-                    '25': ['25A','25B','25C'],
-                    '26': ['26A','26B','26C'],
-                    '27': ['27A','27B','27C'],
-                    '28': ['28A','28B','28C'],
-                    '29': ['29A','29B','29C'],
-                    '30': ['30A','30B','30C'],
-                    '31': ['31A','31B','31C'],
-                    '32': ['32A','32B','32C'],
-                    '33': ['33A','33B','33C'],
-                    '34': ['34A','34B','34C'],
-                    '35': ['35A','35B','35C'],
-                    '36': ['36A','36B','36Cv2'],
-                    '37': ['37A','37B','B2M3'],
-                    '38': ['38A','38Cv2','B2M1'],
-                    '39': ['39A','39B','39Cv2'],
-                    '40': ['40A','40B','40C'],
-                    '41': ['41A','41B','41Cv2'],
-                    '44': ['44A','44B','44Cv2'],
-                    '45': ['45A','45B','45'],
-                    '44R': ['44RA','44RB','44RC'],
-                    '46': ['46A','46B','46Cv2'],
-                    '47': ['47A','47B','47C'],
-                    '48': ['48A','48B','48Cv2'],
-                    '49': ['49A','49B','49Cv2'],
-                    '50': ['50A','50B','50Cv2'],
-                    '51': ['51A','51B','51Cv2'],
-                    '52': ['52A','52B','52Cv2'],
-                    '53': ['53A','53B','53C'],
-                    '54': ['54A','54B','54C'],
-                    '55': ['55A','55B','55C'],
-                    '56': ['56A','56','56C'],
-                    '57': ['57A','57B','57C'],
-                    '58': ['58A','58B','58C'],
-                    '59': ['59A','59B','59C'],
-                    '60': ['60A','60B','60C'],
-                    '61': ['61A','61B','61C'],
-                    '62': ['62A','62B','62C'],
-                    '64': ['64A','64B','64C'],
-                    '66': ['66A','66B','66C'],
-                    '67': ['67A','67B','67C'],
-                    '68': ['68A','68B','68C'],
-                    '69': ['69A','69B','69C'],
-                    '70': ['70A','70B','70C'],
-                    '71': ['71A','71B','71C']})
+#################################### DATA PREP #######################################
 
+# Names of the technical replicates (all have 3 except for sample '20')
+ordered_dict = data_dir + 'station_name_dict_NPSG_analysis.json'
+with open(ordered_dict, 'r') as f:
+    station_name_dict = json.load(f, object_pairs_hook=OrderedDict)
+    
 samples_in_analysis = []
 for key,values in station_name_dict.items():
     samples_in_analysis.extend(values)
     
-# Get the IDs of the 406 ASVs included in the study
+# Get the IDs of the 406 phytolankton ASVs included in the study
 phyto_ASV_lat_temp_anom_sorted_df = pd.read_csv(highcov_dir + 'phyto_ASV_spatiotemporal_anoms_v3.csv', index_col=0)
 ASVs = phyto_ASV_lat_temp_anom_sorted_df.columns
 
@@ -95,6 +47,8 @@ TT_ASV_df = filter_replicate_files(TT_ASV_file)
 # Load metadata for STA calculation
 metadata_df = pd.read_csv(data_dir + 'AVISO_metadata_15km_near_eddy_w_sunrise_data.csv',index_col=0)
 metadata_sorted_df = metadata_df.sort_values(by='time_since_sunrise')
+
+#####################################################################################
 
 def rolling_mean_looping_weighted(df, x_values, window):
     """
@@ -139,7 +93,6 @@ def rolling_mean_looping_weighted(df, x_values, window):
     return result
 
 
-
 boot_array = np.arange(0,10000) # number of times to resample
 
 # Iterate through each ASV
@@ -149,6 +102,8 @@ for a in ASVs:
         print(count)
     
     #################### Bootstrap Abundance ####################
+    
+    # Start an empty pandas dataframe to store data from each bootstrap iteration
     boot_abund_df = pd.DataFrame(index=list(station_name_dict.keys()), columns=boot_array)
     
     # Iterate through each sample to get the replicates 
@@ -168,7 +123,7 @@ for a in ASVs:
             mean_draw_w_replace = np.mean(np.random.choice(sample_reps,size=len(sample_reps),replace=True))
             boot_abund_df.loc[key,n] = mean_draw_w_replace
             
-    #################### Calculate STA ####################
+    #################### Calculate STA (see also `lat_diel_running_means_v3.ipynb`) ####################
     # 1. Rolling mean
     boot_abund_df = boot_abund_df+1 # add buffer to avoid error with 0 abundance
     boot_lat_rolling_df = boot_abund_df.rolling(window=9,center=True,min_periods=4).mean() # lat rolling mean

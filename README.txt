@@ -8,7 +8,7 @@ Genetic data was processed on a local computer (environment `G4.ymal`).
 
 ~~~ /physics_pipeline/ SCRIPTS (environment `py3_parcels_v2.ymal`) ~~~
 
-`functions_for_parcels.py` : functions I use to accompany OceanParcels Lagrangian simulations
+`functions_for_parcels.py` : functions used to accompany OceanParcels Lagrangian simulations
 
 GAUSSIAN CLOUDS
 1. `gaussian_lag_sims_v4.py` : OceanParcels simulations of the Gaussian clouds
@@ -43,21 +43,21 @@ MESOSCALE EDDIES & MAP FIGS
 Pre-prossessing of sequence data and internal standard correction described in Jones-Kellett et al. 2024 (https://doi.org/10.1093/ismeco/ycae115)
 Internal standard correction scripts: https://github.com/lexi-jones/internal_std_correction
 
-1. `pp_group_annotation_v3.ipynb` : Annotate the phytoplankton taxa by group
-2. `lat_diel_running_means_v3.ipynb`: Calculates the spatiotemporal anomaly (STA) from abundance for each phytoplankton ASV 
+1. `lat_diel_running_means_v3.ipynb`: Calculates the spatiotemporal anomaly (STA) from abundance for each phytoplankton ASV 
 	- Fig 2 : Stacked eukaryote groups	
 	- Fig S1 : latitudinal trends
 	- Fig S2 : STA methods
 	- Fig S3 : Stacked cyanobacteria groups
 	- Fig S4 : spatial and temporal distances between samples
-3. `dispersal_vs_eco_metrics_v9.ipynb` : Compares coherence timescale with STA 
-	- Fig 5 : Euk STA vs coherence time (total sum)
-	- Fig 6 : Modeled exponential decay of euk major groups
-	- Fig S11 : Cyan STA vs coherence time
-	- Fig S12 : Euk STA vs coherence time (group level)
-4. `pcc_dist_by_physical_state_v2.ipynb` : Spearman Distance
-	- Fig S5 : Spearman distance of ASV STAs between neighboring samples
-	- Fig S7b,c : Spearman distance of ASV STAs between neighboring samples across FTLE maxima
+2. `bootstrap_STA.py` : Bootstrap resampling (10,000x) w/ replacement to derive confidence intervals for STA 
+3. `dispersal_vs_eco_metrics_v10.ipynb` : Compares coherence timescale with STA 
+	- Fig 4 : Euk STA vs coherence time 
+	- Fig 5 : Modeled exponential decay of euk major groups
+	- Fig S8 : Cyan STA vs coherence time
+	- Fig S93 : Euk STA vs coherence time (group level)
+4. `sig_avg_STA_ASVs.py` : Calculcate average ASV STA by niche type and determine significance from bootstrap data
+5. `compare_ASV_niche_avgs.ipynb` : Analyze average ASV STA by niche type
+	- Fig 6 : Average ASV STA ranked
 
 ~~~ /SST_and_TKE/ SCRIPTS (environment `G4.ymal`) ~~~
 
