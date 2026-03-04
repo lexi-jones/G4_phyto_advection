@@ -3,10 +3,10 @@
 ~~~ ENVIRONMENTS ~~~
 OceanParcels Lagrangian simulations (v2.2.2; https://doi.org/10.5194/gmd-12-3571-2019) were ran and stored on a computer cluster (environment `py3_parcels_v2.ymal`).
 
-Genetic data was processed on a local computer (environment `G4.ymal`).
+Genetic data was processed on a local computer (environment `G4.yaml`).
 
 
-~~~ /physics_pipeline/ SCRIPTS (environment `py3_parcels_v2.ymal`) ~~~
+~~~ /physics_pipeline/ SCRIPTS (environment `py3_parcels_v2.yaml`) ~~~
 
 `functions_for_parcels.py` : functions used to accompany OceanParcels Lagrangian simulations
 
@@ -38,7 +38,7 @@ MESOSCALE EDDIES & MAP FIGS
 	- Fig S10 : LAVD coherent structures of each sampled eddy
 
 
-~~~ /phytoplankton_pipeline/ SCRIPTS (environment `G4.ymal`) ~~~
+~~~ /phytoplankton_pipeline/ SCRIPTS (environment `G4.yaml`) ~~~
 
 Pre-prossessing of sequence data and internal standard correction described in Jones-Kellett et al. 2024 (https://doi.org/10.1093/ismeco/ycae115)
 Internal standard correction scripts: https://github.com/lexi-jones/internal_std_correction
@@ -59,7 +59,7 @@ Internal standard correction scripts: https://github.com/lexi-jones/internal_std
 5. `compare_ASV_niche_avgs.ipynb` : Analyze average ASV STA by niche type
 	- Fig 6 : Average ASV STA ranked
 
-~~~ /SST_and_TKE/ SCRIPTS (environment `G4.ymal`) ~~~
+~~~ /SST_and_TKE/ SCRIPTS (environment `G4.yaml`) ~~~
 
 Supplemental calculations
 
