@@ -1,7 +1,7 @@
 `G4_phyto_advection` contains the scripts that accompany Jones-Kellett et al. 202X. 
 
 ~~~ ENVIRONMENTS ~~~
-OceanParcels Lagrangian simulations (v2.2.2; https://doi.org/10.5194/gmd-12-3571-2019) were ran and stored on a computer cluster (environment `py3_parcels_v2.ymal`).
+OceanParcels Lagrangian simulations (v2.2.2; https://doi.org/10.5194/gmd-12-3571-2019) were ran and stored on a computer cluster (environment `py3_parcels_v2.yaml`).
 
 Genetic data was processed on a local computer (environment `G4.yaml`).
 
