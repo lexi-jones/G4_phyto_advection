@@ -1,4 +1,5 @@
-`G4_phyto_advection` contains the scripts that accompany Jones-Kellett et al. 202X. 
+`G4_phyto_advection` contains the scripts that accompany Jones-Kellett et al. 2026. Derived data used in the analysis is distributed at  https://doi.
+org/10.5281/zenodo.18867070 . 
 
 ~~~ ENVIRONMENTS ~~~
 OceanParcels Lagrangian simulations (v2.2.2; https://doi.org/10.5194/gmd-12-3571-2019) were ran and stored on a computer cluster (environment `py3_parcels_v2.yaml`).
